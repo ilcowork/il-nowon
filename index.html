@@ -1455,6 +1455,14 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
+       <section id="location-map" style="padding: 100px 5% 50px 5%; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: #C5A059;">Location</h2>
+        <p style="margin-bottom: 40px; font-size: 1.1rem;">서울특별시 노원구 공릉로58길 176 (하계우방아파트 상가 203호, 205호)</p>
+        <div id="map"></div>
+    </div>
+</section>
+        
         /* [네이버 지도 초기화] */
         window.addEventListener('load', function () {
             var mapOptions = {
