@@ -907,6 +907,10 @@
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
+        .insta-text {
+            display: inline;
+        }
+
         .kakaotalk-btn {
             background-color: #FEE500;
             color: #3A1D1D;
@@ -1022,6 +1026,11 @@
 
             .hvac-match-text {
                 font-size: 0.8rem;
+            }
+
+            /* 인스타 텍스트 숨기기 (좁은 화면에서) */
+            .insta-text {
+                display: none;
             }
 
             .nav-btn {
@@ -1345,8 +1354,8 @@
     <div class="always-float-btn" onclick="forceShowFloatingBar()" style="">문의하기</div>
 
     <div class="floating-bar hide" id="floatingBar" style="">
-        <a href="https://www.instagram.com/ilcowork" target="_blank" class="float-btn float-btn-half insta-btn">📸
-            인스타</a>
+        <a href="https://www.instagram.com/ilcowork" target="_blank" class="float-btn float-btn-half insta-btn">📸<span
+                class="insta-text"> 인스타</span></a>
         <a href="http://pf.kakao.com/_xbxmxbAX/chat" target="_blank" class="float-btn kakaotalk-btn">💬 카톡상담</a>
         <a href="https://talk.naver.com/ct/wlth2q1" target="_blank" class="float-btn kakao-btn">💚 톡톡상담</a>
         <a href="sms:0507-1460-9087" class="float-btn sms-btn">📧 문자상담</a>
