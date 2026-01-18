@@ -448,6 +448,19 @@
             color: #fff;
             font-weight: 500;
         }
+                /* 485-750px 범위에서 카드 중앙 정렬 */
+        @media (min-width: 485px) and (max-width: 750px) {
+            .sp-benefit-container {
+                align-items: center;
+            }
+
+            .sp-benefit-card {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
 
         @media (max-width: 768px) {
             .sp-title {
