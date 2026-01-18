@@ -1017,8 +1017,8 @@
         }
     </style>
 
-<script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=05dgpdtpvf"></script>
-    
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ewltr3i0ab"></script>
+
 </head>
 
 <body style="">
@@ -1455,8 +1455,8 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-      
-        
+
+
         /* [네이버 지도 초기화] */
         window.addEventListener('load', function () {
             var mapOptions = {
@@ -1523,60 +1523,8 @@
         }
     </script>
 
-    
-    <script>
-        /* [지도 초기화 로직] - 라이브러리가 로드된 후 실행되도록 설정 */
-        window.addEventListener('load', function () {
-            // 원장님이 말씀하신 공릉로58길 176 부근의 정확한 위도/경도 좌표입니다.
-            var nowonLocation = new naver.maps.LatLng(37.6368, 127.0694); 
 
-            var mapOptions = {
-                center: nowonLocation,
-                zoom: 17,
-                scrollWheel: false
-            };
 
-            var map = new naver.maps.Map('map', mapOptions);
-
-            var marker = new naver.maps.Marker({
-                position: nowonLocation,
-                map: map,
-                title: '아이엘 공유오피스 노원점'
-            });
-
-            var contentString = [
-                '<div style="padding:15px; border-radius:8px; background:#fff; border:1px solid #C5A059; min-width:200px; text-align:center;">',
-                '   <h3 style="margin:0 0 8px 0; font-size:16px; color:#2C3E50;">아이엘 공유오피스 노원점</h3>',
-                '   <p style="margin:0; font-size:13px; color:#666; line-height:1.4;">서울특별시 노원구 공릉로58길 176<br>(하계우방상가 2층)</p>',
-                '</div>'
-            ].join('');
-
-            var infowindow = new naver.maps.InfoWindow({
-                content: contentString,
-                backgroundColor: "white",
-                borderColor: "#C5A059",
-                borderWidth: 1,
-                pixelOffset: new naver.maps.Point(0, -5)
-            });
-
-            // 마커 클릭 시 정보창 토글
-            naver.maps.Event.addListener(marker, "click", function (e) {
-                if (infowindow.getMap()) {
-                    infowindow.close();
-                } else {
-                    infowindow.open(map, marker);
-                }
-            });
-
-            // 처음부터 정보창 열어두기
-            infowindow.open(map, marker);
-
-            // 지도 클릭 시 네이버 지도 실제 페이지로 연결 (길찾기 편의성)
-            document.getElementById('map').addEventListener('click', function () {
-                window.open('https://map.naver.com/p/entry/place/2015305962', '_blank');
-            });
-        });
-    
 </body>
 
 </html>
