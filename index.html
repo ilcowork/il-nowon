@@ -4,12 +4,15 @@
 
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'[https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)](https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f));
-})(window,document,'script','dataLayer','GTM-57V2LLNP');</script>
-<!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '[https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f)](https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f));
+})(window, document, 'script', 'dataLayer', 'GTM-57V2LLNP');</script>
+    <!-- End Google Tag Manager -->
     <script>
         if (location.pathname === '') {
             location.replace(location.origin + '/');
@@ -952,6 +955,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-color: #1a1a1a;
         }
 
+        /* 위치보기 플로팅 버튼 스타일 */
+        .location-float-btn {
+            background-color: var(--accent-green) !important;
+            /* 브랜드 초록색 사용 */
+            bottom: 160px !important;
+            /* 문의하기 버튼(90px) 위에 배치 */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            /* 화면에 고정 */
+            right: 20px;
+            z-index: 2500;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 1.2;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .location-float-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--gold) !important;
+        }
+
         .always-float-btn {
             position: fixed;
             right: 20px;
@@ -1079,10 +1115,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body style="">
 
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="[https://www.googletagmanager.com/ns.html?id=GTM-57V2LLNP](https://www.googletagmanager.com/ns.html?id=GTM-57V2LLNP)"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    
+    <noscript><iframe
+            src="[https://www.googletagmanager.com/ns.html?id=GTM-57V2LLNP](https://www.googletagmanager.com/ns.html?id=GTM-57V2LLNP)"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header style="">
         <div class="logo-area" onclick="window.scrollTo({top: 0, behavior: &#39;smooth&#39;})">
             <img src="./아이엘 공유오피스 노원 _ 차분한 몰입과 효율의 공간_files/logo.png" alt="아이엘 로고" class="logo-img">
@@ -1107,7 +1144,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </p>
             <br><br>
             <a href="https://talk.naver.com/ct/wlth2q1" target="_blank" class="btn">방문 예약하기</a>
-            <a href="https://naver.me/xqufIQY6" target="_blank" class="btn btn-outline" style="color: white; border-color: white;">플레이스
+            <a href="https://naver.me/xqufIQY6" target="_blank" class="btn btn-outline"
+                style="color: white; border-color: white;">플레이스
                 방문</a>
         </div>
     </section>
@@ -1290,7 +1328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="benefit-item">
                     <h4>Trustworthy</h4>
-                    <p><strong>건물주 직접 운영</strong>으로 장기적이고 안정적인 사업 환경을 제공합니다. 
+                    <p><strong>건물주 직접 운영</strong>으로 장기적이고 안정적인 사업 환경을 제공합니다.
                         관공서 및 금융기관 <strong>실사 100% 지원</strong>. 완벽한 대응으로 비상주 서비스의 신뢰도를 높여드립니다.</p>
                 </div>
                 <div class="benefit-item">
@@ -1382,6 +1420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
 
+    <a href="#location-map" class="always-float-btn location-float-btn">위치보기</a>
     <div class="always-float-btn" onclick="forceShowFloatingBar()" style="">문의하기</div>
 
     <div class="floating-bar hide" id="floatingBar" style="">
