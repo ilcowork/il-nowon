@@ -105,7 +105,7 @@
             gap: 8px;
             cursor: pointer;
             padding: 12px 20px;
-            background: #1a1a1a;
+            background: transparent;
             height: 100%;
         }
 
@@ -117,7 +117,7 @@
         .logo-text {
             font-size: 1rem;
             font-weight: 600;
-            color: #fff;
+            color: #333;
             white-space: nowrap;
         }
 
@@ -161,16 +161,14 @@
             font-weight: 500;
             transition: all 0.3s ease;
             border-bottom: 3px solid transparent;
+            position: relative;
         }
 
         .nav-menu a:hover {
-            background: #f8f8f8;
             border-bottom-color: var(--accent-green);
         }
 
         .nav-menu a.active {
-            background: var(--accent-green);
-            color: white;
             border-bottom-color: var(--accent-green);
         }
 
