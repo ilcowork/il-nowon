@@ -174,6 +174,26 @@
             border-bottom-color: var(--accent-green);
         }
 
+        /* Navigation text control for narrow screens */
+        .nav-text-short {
+            display: none;
+        }
+
+        @media (max-width: 1150px) {
+            .nav-text-full {
+                display: none;
+            }
+
+            .nav-text-short {
+                display: inline;
+            }
+
+            .hide-on-narrow {
+                display: none;
+            }
+        }
+
+
         /* Header Actions */
         .header-actions {
             display: flex;
@@ -1419,13 +1439,15 @@
                 <li><a href="#"
                         onclick="document.querySelector('.gallery-section').scrollIntoView({behavior: 'smooth'}); return false;">갤러리</a>
                 </li>
-                <li><a href="#philosophy">상주사무실</a></li>
+                <li><a href="#philosophy"><span class="nav-text-full">상주사무실</span><span
+                            class="nav-text-short">상주</span></a></li>
                 <li><a href="#"
-                        onclick="document.querySelector('.virtual-office').scrollIntoView({behavior: 'smooth'}); return false;">비상주사무실</a>
+                        onclick="document.querySelector('.virtual-office').scrollIntoView({behavior: 'smooth'}); return false;"><span
+                            class="nav-text-full">비상주사무실</span><span class="nav-text-short">비상주</span></a>
                 </li>
                 <li><a href="#newyear-promo">가격안내</a></li>
-                <li><a href="#location-map">주차안내</a></li>
-                <li><a href="#"
+                <li class="hide-on-narrow"><a href="#location-map">주차안내</a></li>
+                <li class="hide-on-narrow"><a href="#"
                         onclick="document.querySelector('.branch-network-section').scrollIntoView({behavior: 'smooth'}); return false;">지점안내</a>
                 </li>
             </ul>
