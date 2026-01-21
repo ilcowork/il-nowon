@@ -1327,6 +1327,57 @@
             background-color: var(--accent-green);
         }
 
+         /* [네이버 지도 초기화] */
+        window.addEventListener('load', function () {
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.6373481, 127.0768337),
+                zoom: 17,
+                scrollWheel: false // 스크롤 시 줌 방지
+            };
+
+            var map = new naver.maps.Map('map', mapOptions);
+
+            var marker = new naver.maps.Marker({
+                position: new naver.maps.LatLng(37.6373481, 127.0768337),
+                map: map,
+                title: '아이엘 공유오피스 노원점'
+            });
+
+            var contentString = [
+                '<div class="iw_inner" style="padding:15px; border-radius:8px; background:#fff; border:1px solid #C5A059; min-width:200px; text-align:center;">',
+                '   <h3 style="margin:0 0 8px 0; font-size:16px; color:#2C3E50; font-family:\'Noto Sans KR\', sans-serif;">아이엘 공유오피스 노원점</h3>',
+                '   <p style="margin:0; font-size:13px; color:#666; font-family:\'Noto Sans KR\', sans-serif; line-height:1.4;">서울특별시 노원구 공릉로58길 176<br>(하계우방아파트 상가 2층)</p>',
+                '</div>'
+            ].join('');
+
+            var infowindow = new naver.maps.InfoWindow({
+                content: contentString,
+                backgroundColor: "transparent",
+                borderColor: "transparent",
+                borderWidth: 0,
+                anchorSize: new naver.maps.Size(10, 10),
+                anchorSkew: true,
+                anchorColor: "#fff",
+                pixelOffset: new naver.maps.Point(0, -5)
+            });
+
+            naver.maps.Event.addListener(marker, "click", function (e) {
+                if (infowindow.getMap()) {
+                    infowindow.close();
+                } else {
+                    infowindow.open(map, marker);
+                }
+            });
+
+            // 지도 영역 클릭 시 네이버 지도로 이동 (길찾기)
+            document.getElementById('map').addEventListener('click', function () {
+                window.open('https://map.naver.com/p/entry/place/2015305962', '_blank');
+            });
+
+            // 처음부터 정보창 열어두기
+            infowindow.open(map, marker);
+        });
+
         /* [관리자 모드 전용 스타일] */
         .admin-edit-active [contenteditable="true"] {
             outline: 2px dashed var(--gold);
