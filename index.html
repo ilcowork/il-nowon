@@ -121,6 +121,21 @@
             white-space: nowrap;
         }
 
+        .logo-text-short {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text-full {
+                display: none;
+            }
+
+            .logo-text-short {
+                display: inline;
+            }
+        }
+
+
         /* Navigation Menu */
         .nav-menu {
             display: flex;
@@ -1393,7 +1408,8 @@
     <header>
         <div class="logo-area" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
             <img src="./아이엘 공유오피스 노원 _ 차분한 몰입과 효율의 공간_files/logo.png" alt="아이엘 로고" class="logo-img">
-            <span class="logo-text">아이엘 공유오피스 노원점</span>
+            <span class="logo-text logo-text-full">아이엘 공유오피스 노원점</span>
+            <span class="logo-text logo-text-short">아이엘 노원점</span>
         </div>
 
         <nav>
